@@ -1,0 +1,142 @@
+/* General Reset and Base Styles */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Rubik', sans-serif;
+    background-color: #1d204b;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Container */
+.container {
+    max-width: 1100px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Tablist */
+.tablist {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.tablist__button {
+    background: none;
+    border: none;
+    color: #6f76c8;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.tablist__button[aria-selected="true"] {
+    background-color: #6f76c8;
+    color: #fff;
+}
+
+/* Cards Grid */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Card Styles */
+.card {
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    color: #fff;
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+.card__content {
+    position: relative;
+    padding: 20px;
+}
+
+.card__body {
+    margin-top: 30px;
+}
+
+.current {
+    font-size: 3rem;
+    font-weight: 300;
+}
+
+.previous__time-info {
+    font-size: 0.875rem;
+    color: #a3a8cc;
+}
+
+/* Card Colors */
+.work {
+    background-color: #ff8c66;
+}
+
+.play {
+    background-color: #56c2e6;
+}
+
+.study {
+    background-color: #ff5c7c;
+}
+
+.exercise {
+    background-color: #4acf81;
+}
+
+.social {
+    background-color: #7536d3;
+}
+
+.selfcare {
+    background-color: #f1c65b;
+}
+
+/* Button: More Info */
+.more-info__btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.more-info__btn svg {
+    fill: #bbc4d6;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .tablist {
+        justify-content: center;
+    }
+
+    .card__body {
+        margin-top: 20px;
+    }
+
+    .current {
+        font-size: 2.5rem;
+    }
+}
