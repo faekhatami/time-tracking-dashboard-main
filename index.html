@@ -4,97 +4,139 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <title>Frontend Mentor | Time tracking dashboard</title>
-  <link rel="stylesheet" href="./styles.css">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Time Tracking Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap" rel="stylesheet">
 </head>
 
 <body>
   <main class="container">
-    <section class="profile-card">
-      <div class="profile-header">
-        <img src="./images/image-jeremy.png" alt="Jeremy Robson" class="profile-pic">
-        <div class="profile-info">
-          <p>Report for</p>
-          <h1>Jeremy Robson</h1>
+    <!-- Tablist Navigation -->
+    <ul class="tablist" role="tablist">
+      <li>
+        <button class="tablist__button" aria-selected="true" role="tab">Daily</button>
+      </li>
+      <li>
+        <button class="tablist__button" role="tab">Weekly</button>
+      </li>
+      <li>
+        <button class="tablist__button" role="tab">Monthly</button>
+      </li>
+    </ul>
+
+    <!-- Cards Section -->
+    <section class="cards">
+      <!-- Card: Work -->
+      <article class="card work">
+        <div class="card__content">
+          <button class="more-info__btn" aria-label="More info">
+            <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M2.5 2.5a2.5 2.5 0 100 5 2.5 2.5 0 100-5zM10.5 2.5a2.5 2.5 0 100 5 2.5 2.5 0 100-5zM18.5 2.5a2.5 2.5 0 100 5 2.5 2.5 0 100-5z"
+                fill="#BBC4D6" fill-rule="evenodd" />
+            </svg>
+          </button>
+          <h2 class="sr-only">Work</h2>
+          <div class="card__body">
+            <p class="current">32hrs</p>
+            <p class="previous__time-info">Last Week - 36hrs</p>
+          </div>
         </div>
-      </div>
-      <div class="view-switch">
-        <button class="view-btn active" data-view="daily">Daily</button>
-        <button class="view-btn" data-view="weekly">Weekly</button>
-        <button class="view-btn" data-view="monthly">Monthly</button>
-      </div>
+      </article>
+
+      <!-- Card: Play -->
+      <article class="card play">
+        <div class="card__content">
+          <button class="more-info__btn" aria-label="More info">
+            <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M2.5 2.5a2.5 2.5 0 100 5 2.5 2.5 0 100-5zM10.5 2.5a2.5 2.5 0 100 5 2.5 2.5 0 100-5zM18.5 2.5a2.5 2.5 0 100 5 2.5 2.5 0 100-5z"
+                fill="#BBC4D6" fill-rule="evenodd" />
+            </svg>
+          </button>
+          <h2 class="sr-only">Play</h2>
+          <div class="card__body">
+            <p class="current">10hrs</p>
+            <p class="previous__time-info">Last Week - 8hrs</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card: Study -->
+      <article class="card study">
+        <div class="card__content">
+          <button class="more-info__btn" aria-label="More info">
+            <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M2.5 2.5a2.5 2.5 0 100 5 2.5 2.5 0 100-5zM10.5 2.5a2.5 2.5 0 100 5 2.5 2.5 0 100-5zM18.5 2.5a2.5 2.5 0 100 5 2.5 2.5 0 100-5z"
+                fill="#BBC4D6" fill-rule="evenodd" />
+            </svg>
+          </button>
+          <h2 class="sr-only">Study</h2>
+          <div class="card__body">
+            <p class="current">4hrs</p>
+            <p class="previous__time-info">Last Week - 7hrs</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card: Exercise -->
+      <article class="card exercise">
+        <div class="card__content">
+          <button class="more-info__btn" aria-label="More info">
+            <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M2.5 2.5a2.5 2.5 0 100 5 2.5 2.5 0 100-5zM10.5 2.5a2.5 2.5 0 100 5 2.5 2.5 0 100-5zM18.5 2.5a2.5 2.5 0 100 5 2.5 2.5 0 100-5z"
+                fill="#BBC4D6" fill-rule="evenodd" />
+            </svg>
+          </button>
+          <h2 class="sr-only">Exercise</h2>
+          <div class="card__body">
+            <p class="current">4hrs</p>
+            <p class="previous__time-info">Last Week - 5hrs</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card: Social -->
+      <article class="card social">
+        <div class="card__content">
+          <button class="more-info__btn" aria-label="More info">
+            <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M2.5 2.5a2.5 2.5 0 100 5 2.5 2.5 0 100-5zM10.5 2.5a2.5 2.5 0 100 5 2.5 2.5 0 100-5zM18.5 2.5a2.5 2.5 0 100 5 2.5 2.5 0 100-5z"
+                fill="#BBC4D6" fill-rule="evenodd" />
+            </svg>
+          </button>
+          <h2 class="sr-only">Social</h2>
+          <div class="card__body">
+            <p class="current">5hrs</p>
+            <p class="previous__time-info">Last Week - 10hrs</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card: Self Care -->
+      <article class="card selfcare">
+        <div class="card__content">
+          <button class="more-info__btn" aria-label="More info">
+            <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M2.5 2.5a2.5 2.5 0 100 5 2.5 2.5 0 100-5zM10.5 2.5a2.5 2.5 0 100 5 2.5 2.5 0 100-5zM18.5 2.5a2.5 2.5 0 100 5 2.5 2.5 0 100-5z"
+                fill="#BBC4D6" fill-rule="evenodd" />
+            </svg>
+          </button>
+          <h2 class="sr-only">Self Care</h2>
+          <div class="card__body">
+            <p class="current">2hrs</p>
+            <p class="previous__time-info">Last Week - 2hrs</p>
+          </div>
+        </div>
+      </article>
     </section>
-    <div class="cards">
-      <section class="card work">
-        <div class="card-content">
-          <h2>Work</h2>
-          <button><img src="./images/icon-ellipsis.svg" alt="ellipsis button"></button>
-          <p class="hours">32hrs</p>
-          <p class="last-week">Last Week - 36hrs</p>
-        </div>
-      </section>
-      <section class="card play">
-        <div class="card-content">
-          <div class="content-up">
-            <h2>Play</h2>
-            <button><img src="./images/icon-ellipsis.svg" alt="ellipsis button"></button>
-          </div>
-          <p class="hours">10hrs</p>
-          <p class="last-week">Lsat Week - 8hrs</p>
-        </div>
-      </section>
-      <section class="card study">
-        <div class="card-content">
-          <div class="content-up">
-            <h2>Study</h2>
-            <button><img src="./images/icon-ellipsis.svg" alt="ellipsis button"></button>
-          </div>
-          <div class="content-down">
-            <p class="hours">4hrs</p>
-            <p class="last-week">Last Week - 7hrs</p>
-          </div>
-        </div>
-      </section>
-      <section class="card exercise">
-        <div class="card-content">
-          <div class="content-up">
-            <h2>Exercise</h2>
-            <button><img src="./images/icon-ellipsis.svg" alt="ellipsis button"></button>
-          </div>
-          <div class="content-down">
-            <p class="hours">4hrs</p>
-            <p class="last-week">Last Week - 10hrs</p>
-          </div>
-        </div>
-      </section>
-      <section class="card social">
-        <div class="card-content">
-          <div class="content-up">
-            <h2>Social</h2>
-            <button><img src="./images/icon-ellipsis.svg" alt="ellipsis button"></button>
-          </div>
-          <div class="content-down">
-            <p class="hours">5hrs</p>
-            <p class="last-week">Last Week - 10hrs</p>
-          </div>
-        </div>
-      </section>
-      <section class="card self-care">
-        <div class="card-content">
-          <div class="content-up">
-            <h2>Self Care</h2>
-            <button><img src="./images/icon-ellipsis.svg" alt="ellipsis button"></button>
-          </div>
-          <div class="content-down">
-            <p class="hours">2hrs</p>
-            <p class="last-week">Last Week - 2hrs</p>
-          </div>
-        </div>
-      </section>
-    </div>
   </main>
-  <script src="./script.js"></script>
+  <script src="index.js"></script>
 </body>
 
 </html>
