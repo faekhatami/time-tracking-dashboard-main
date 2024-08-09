@@ -5,37 +5,40 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Time Tracking Dashboard</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Time tracking dashboard</title>
+  <link rel="stylesheet" href="./styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap" rel="stylesheet">
 </head>
 
 <body>
   <main class="container">
-    <!-- Tablist Navigation -->
-    <ul class="tablist" role="tablist">
-      <li>
-        <button class="tablist__button" aria-selected="true" role="tab">Daily</button>
-      </li>
-      <li>
-        <button class="tablist__button" role="tab">Weekly</button>
-      </li>
-      <li>
-        <button class="tablist__button" role="tab">Monthly</button>
-      </li>
-    </ul>
-
+    <section class="profile-card">
+      <img src="./images/image-jeremy.png" alt="Jeremy Robson profile picture">
+      <div class="profile-info">
+        <p>Report for</p>
+        <h2>Jeremy Robson</h2>
+      </div>
+      <!-- Tablist Navigation -->
+      <ul class="tablist" role="tablist">
+        <li>
+          <button class="tablist__button" aria-selected="true" role="tab">Daily</button>
+        </li>
+        <li>
+          <button class="tablist__button" role="tab">Weekly</button>
+        </li>
+        <li>
+          <button class="tablist__button" role="tab">Monthly</button>
+        </li>
+      </ul>
+    </section>
     <!-- Cards Section -->
     <section class="cards">
       <!-- Card: Work -->
       <article class="card work">
         <div class="card__content">
           <button class="more-info__btn" aria-label="More info">
-            <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M2.5 2.5a2.5 2.5 0 100 5 2.5 2.5 0 100-5zM10.5 2.5a2.5 2.5 0 100 5 2.5 2.5 0 100-5zM18.5 2.5a2.5 2.5 0 100 5 2.5 2.5 0 100-5z"
-                fill="#BBC4D6" fill-rule="evenodd" />
-            </svg>
+            <img src="./images/icon-ellipsis.svg" alt="ellipsis button">
           </button>
           <h2 class="sr-only">Work</h2>
           <div class="card__body">
@@ -49,11 +52,7 @@
       <article class="card play">
         <div class="card__content">
           <button class="more-info__btn" aria-label="More info">
-            <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M2.5 2.5a2.5 2.5 0 100 5 2.5 2.5 0 100-5zM10.5 2.5a2.5 2.5 0 100 5 2.5 2.5 0 100-5zM18.5 2.5a2.5 2.5 0 100 5 2.5 2.5 0 100-5z"
-                fill="#BBC4D6" fill-rule="evenodd" />
-            </svg>
+            <img src="./images/icon-ellipsis.svg" alt="ellipsis button">
           </button>
           <h2 class="sr-only">Play</h2>
           <div class="card__body">
@@ -67,11 +66,8 @@
       <article class="card study">
         <div class="card__content">
           <button class="more-info__btn" aria-label="More info">
-            <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M2.5 2.5a2.5 2.5 0 100 5 2.5 2.5 0 100-5zM10.5 2.5a2.5 2.5 0 100 5 2.5 2.5 0 100-5zM18.5 2.5a2.5 2.5 0 100 5 2.5 2.5 0 100-5z"
-                fill="#BBC4D6" fill-rule="evenodd" />
-            </svg>
+            <img src="./images/icon-ellipsis.svg" alt="ellipsis button">
+
           </button>
           <h2 class="sr-only">Study</h2>
           <div class="card__body">
@@ -85,11 +81,8 @@
       <article class="card exercise">
         <div class="card__content">
           <button class="more-info__btn" aria-label="More info">
-            <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M2.5 2.5a2.5 2.5 0 100 5 2.5 2.5 0 100-5zM10.5 2.5a2.5 2.5 0 100 5 2.5 2.5 0 100-5zM18.5 2.5a2.5 2.5 0 100 5 2.5 2.5 0 100-5z"
-                fill="#BBC4D6" fill-rule="evenodd" />
-            </svg>
+            <img src="./images/icon-ellipsis.svg" alt="ellipsis button">
+
           </button>
           <h2 class="sr-only">Exercise</h2>
           <div class="card__body">
@@ -103,11 +96,8 @@
       <article class="card social">
         <div class="card__content">
           <button class="more-info__btn" aria-label="More info">
-            <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M2.5 2.5a2.5 2.5 0 100 5 2.5 2.5 0 100-5zM10.5 2.5a2.5 2.5 0 100 5 2.5 2.5 0 100-5zM18.5 2.5a2.5 2.5 0 100 5 2.5 2.5 0 100-5z"
-                fill="#BBC4D6" fill-rule="evenodd" />
-            </svg>
+            <img src="./images/icon-ellipsis.svg" alt="ellipsis button">
+
           </button>
           <h2 class="sr-only">Social</h2>
           <div class="card__body">
@@ -121,11 +111,8 @@
       <article class="card selfcare">
         <div class="card__content">
           <button class="more-info__btn" aria-label="More info">
-            <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M2.5 2.5a2.5 2.5 0 100 5 2.5 2.5 0 100-5zM10.5 2.5a2.5 2.5 0 100 5 2.5 2.5 0 100-5zM18.5 2.5a2.5 2.5 0 100 5 2.5 2.5 0 100-5z"
-                fill="#BBC4D6" fill-rule="evenodd" />
-            </svg>
+            <img src="./images/icon-ellipsis.svg" alt="ellipsis button">
+
           </button>
           <h2 class="sr-only">Self Care</h2>
           <div class="card__body">
@@ -136,7 +123,7 @@
       </article>
     </section>
   </main>
-  <script src="index.js"></script>
+  <script src="./script.js"></script>
 </body>
 
 </html>

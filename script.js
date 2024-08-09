@@ -3,39 +3,56 @@ const tabButtons = document.querySelectorAll(".tablist__button");
 const cards = document.querySelectorAll(".card");
 
 // Add event listeners to each tab button
-tabButtons.forEach((button) => {
+tabButtons.forEach((button, index) => {
   button.addEventListener("click", () => {
-    const timePeriod = button.dataset.timePeriod;
-
-    // Remove aria-selected attribute from all buttons
+    // Remove the 'aria-selected' attribute from all buttons
     tabButtons.forEach((btn) => btn.setAttribute("aria-selected", "false"));
 
-    // Set aria-selected attribute to the clicked button
+    // Add the 'aria-selected' attribute to the clicked button
     button.setAttribute("aria-selected", "true");
 
-    // Update the cards with the selected time period data
-    updateCards(timePeriod);
+    // Update the cards based on the selected time frame
+    const timeframe = button.textContent.toLowerCase();
+    updateCards(timeframe);
   });
 });
 
-// Function to update the card content based on the selected time period
-function updateCards(timePeriod) {
-  cards.forEach((card) => {
-    const current = card.querySelector(".current");
-    const previous = card.querySelector(".previous__time-info");
+// Function to update the cards based on the selected timeframe
+function updateCards(timeframe) {
+  const data = {
+    daily: [
+      { current: "5hrs", previous: "Last Day - 7hrs" },
+      { current: "1hrs", previous: "Last Day - 2hrs" },
+      { current: "0hrs", previous: "Last Day - 1hr" },
+      { current: "1hrs", previous: "Last Day - 1hr" },
+      { current: "0hrs", previous: "Last Day - 3hrs" },
+      { current: "0hrs", previous: "Last Day - 1hr" },
+    ],
+    weekly: [
+      { current: "32hrs", previous: "Last Week - 36hrs" },
+      { current: "10hrs", previous: "Last Week - 8hrs" },
+      { current: "4hrs", previous: "Last Week - 7hrs" },
+      { current: "4hrs", previous: "Last Week - 5hrs" },
+      { current: "5hrs", previous: "Last Week - 10hrs" },
+      { current: "2hrs", previous: "Last Week - 2hrs" },
+    ],
+    monthly: [
+      { current: "103hrs", previous: "Last Month - 128hrs" },
+      { current: "23hrs", previous: "Last Month - 29hrs" },
+      { current: "13hrs", previous: "Last Month - 19hrs" },
+      { current: "11hrs", previous: "Last Month - 18hrs" },
+      { current: "21hrs", previous: "Last Month - 23hrs" },
+      { current: "7hrs", previous: "Last Month - 11hrs" },
+    ],
+  };
 
-    // Get the data from the card element's dataset attributes
-    const currentData = card.dataset[timePeriod];
-    const previousData =
-      card.dataset[
-        `previous${timePeriod.charAt(0).toUpperCase() + timePeriod.slice(1)}`
-      ];
-
-    // Update the content of the card
-    current.textContent = `${currentData}hrs`;
-    previous.textContent = `Last Week - ${previousData}hrs`;
+  // Update each card with the new data
+  cards.forEach((card, index) => {
+    card.querySelector(".current").textContent = data[timeframe][index].current;
+    card.querySelector(".previous__time-info").textContent =
+      data[timeframe][index].previous;
   });
 }
 
-// Initialize with the 'daily' time period by default
-document.querySelector('.tablist__button[data-time-period="daily"]').click();
+// Initialize the first tab as active on page load
+updateCards("daily");
