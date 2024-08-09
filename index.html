@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Time tracking dashboard</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+  <main class="container">
+    <section class="profile-card">
+      <div class="profile-header">
+        <img src="./images/image-jeremy.png" alt="Jeremy Robson" class="profile-pic">
+        <div class="profile-info">
+          <p>Report for</p>
+          <h1>Jeremy Robson</h1>
+        </div>
+      </div>
+      <div class="view-switch">
+        <button class="view-btn active" data-view="daily">Daily</button>
+        <button class="view-btn" data-view="weekly">Weekly</button>
+        <button class="view-btn" data-view="monthly">Monthly</button>
+      </div>
+    </section>
+    <div class="cards">
+      <section class="card work">
+        <div class="card-content">
+          <h2>Work</h2>
+          <button><img src="./images/icon-ellipsis.svg" alt="ellipsis button"></button>
+          <p class="hours">32hrs</p>
+          <p class="last-week">Last Week - 36hrs</p>
+        </div>
+      </section>
+      <section class="card play">
+        <div class="card-content">
+          <div class="content-up">
+            <h2>Play</h2>
+            <button><img src="./images/icon-ellipsis.svg" alt="ellipsis button"></button>
+          </div>
+          <p class="hours">10hrs</p>
+          <p class="last-week">Lsat Week - 8hrs</p>
+        </div>
+      </section>
+      <section class="card study">
+        <div class="card-content">
+          <div class="content-up">
+            <h2>Study</h2>
+            <button><img src="./images/icon-ellipsis.svg" alt="ellipsis button"></button>
+          </div>
+          <div class="content-down">
+            <p class="hours">4hrs</p>
+            <p class="last-week">Last Week - 7hrs</p>
+          </div>
+        </div>
+      </section>
+      <section class="card exercise">
+        <div class="card-content">
+          <div class="content-up">
+            <h2>Exercise</h2>
+            <button><img src="./images/icon-ellipsis.svg" alt="ellipsis button"></button>
+          </div>
+          <div class="content-down">
+            <p class="hours">4hrs</p>
+            <p class="last-week">Last Week - 10hrs</p>
+          </div>
+        </div>
+      </section>
+      <section class="card social">
+        <div class="card-content">
+          <div class="content-up">
+            <h2>Social</h2>
+            <button><img src="./images/icon-ellipsis.svg" alt="ellipsis button"></button>
+          </div>
+          <div class="content-down">
+            <p class="hours">5hrs</p>
+            <p class="last-week">Last Week - 10hrs</p>
+          </div>
+        </div>
+      </section>
+      <section class="card self-care">
+        <div class="card-content">
+          <div class="content-up">
+            <h2>Self Care</h2>
+            <button><img src="./images/icon-ellipsis.svg" alt="ellipsis button"></button>
+          </div>
+          <div class="content-down">
+            <p class="hours">2hrs</p>
+            <p class="last-week">Last Week - 2hrs</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <script src="./script.js"></script>
+</body>
+
+</html>
