@@ -1,58 +1,171 @@
-// Get the tab buttons and card elements
-const tabButtons = document.querySelectorAll(".tablist__button");
-const cards = document.querySelectorAll(".card");
+fetch("./data.json")
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error("Network response was not ok " + response.statusText);
+    }
+    return response.json();
+  })
+  .then((data) => {
+    console.log("Data fetched successfully:", data);
 
-// Add event listeners to each tab button
-tabButtons.forEach((button, index) => {
-  button.addEventListener("click", () => {
-    // Remove the 'aria-selected' attribute from all buttons
-    tabButtons.forEach((btn) => btn.setAttribute("aria-selected", "false"));
+    // Get the tab buttons and card elements
+    const tabButtons = document.querySelectorAll(".tablist-button");
+    const cards = document.querySelectorAll(".card");
 
-    // Add the 'aria-selected' attribute to the clicked button
-    button.setAttribute("aria-selected", "true");
+    // Add event listeners to each tab button
+    tabButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        // Remove the 'aria-selected' attribute from all buttons
+        tabButtons.forEach((btn) => btn.setAttribute("aria-selected", "false"));
 
-    // Update the cards based on the selected time frame
-    const timeframe = button.textContent.toLowerCase();
-    updateCards(timeframe);
-  });
-});
+        // Add the 'aria-selected' attribute to the clicked button
+        button.setAttribute("aria-selected", "true");
 
-// Function to update the cards based on the selected timeframe
-function updateCards(timeframe) {
-  const data = {
-    daily: [
-      { current: "5hrs", previous: "Last Day - 7hrs" },
-      { current: "1hrs", previous: "Last Day - 2hrs" },
-      { current: "0hrs", previous: "Last Day - 1hr" },
-      { current: "1hrs", previous: "Last Day - 1hr" },
-      { current: "0hrs", previous: "Last Day - 3hrs" },
-      { current: "0hrs", previous: "Last Day - 1hr" },
-    ],
-    weekly: [
-      { current: "32hrs", previous: "Last Week - 36hrs" },
-      { current: "10hrs", previous: "Last Week - 8hrs" },
-      { current: "4hrs", previous: "Last Week - 7hrs" },
-      { current: "4hrs", previous: "Last Week - 5hrs" },
-      { current: "5hrs", previous: "Last Week - 10hrs" },
-      { current: "2hrs", previous: "Last Week - 2hrs" },
-    ],
-    monthly: [
-      { current: "103hrs", previous: "Last Month - 128hrs" },
-      { current: "23hrs", previous: "Last Month - 29hrs" },
-      { current: "13hrs", previous: "Last Month - 19hrs" },
-      { current: "11hrs", previous: "Last Month - 18hrs" },
-      { current: "21hrs", previous: "Last Month - 23hrs" },
-      { current: "7hrs", previous: "Last Month - 11hrs" },
-    ],
-  };
+        // Update the cards based on the selected time frame
+        const timeframe = button.textContent.toLowerCase();
+        updateCards(timeframe, data);
+      });
+    });
 
-  // Update each card with the new data
-  cards.forEach((card, index) => {
-    card.querySelector(".current").textContent = data[timeframe][index].current;
-    card.querySelector(".previous__time-info").textContent =
-      data[timeframe][index].previous;
-  });
-}
+    // Function to update the cards based on the selected timeframe
+    function updateCards(timeframe, data) {
+      console.log("Updating cards for timeframe:", timeframe);
 
-// Initialize the first tab as active on page load
-updateCards("daily");
+      cards.forEach((card, index) => {
+        const currentTime = card.querySelector(".current-time");
+        const previousTime = card.querySelector(".previous-time");
+
+        if (!currentTime || !previousTime) {
+          console.error(
+            "Could not find .current-time or .previous-time in card:",
+            card
+          );
+          return;
+        }
+
+        const { current, previous } = data[index].timeframes[timeframe];
+        currentTime.textContent = `${current}hrs`;
+        previousTime.textContent = `Last ${
+          timeframe.charAt(0).toUpperCase() + timeframe.slice(1)
+        } - ${previous}hrs`;
+      });
+    }
+
+    // Initialize the first tab as active on page load
+    updateCards("daily", data);
+  })
+  .catch((error) => console.error("Error fetching data:", error));
+fetch("./data.json")
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error("Network response was not ok " + response.statusText);
+    }
+    return response.json();
+  })
+  .then((data) => {
+    console.log("Data fetched successfully:", data);
+
+    // Get the tab buttons and card elements
+    const tabButtons = document.querySelectorAll(".tablist-button");
+    const cards = document.querySelectorAll(".card");
+
+    // Add event listeners to each tab button
+    tabButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        // Remove the 'aria-selected' attribute from all buttons
+        tabButtons.forEach((btn) => btn.setAttribute("aria-selected", "false"));
+
+        // Add the 'aria-selected' attribute to the clicked button
+        button.setAttribute("aria-selected", "true");
+
+        // Update the cards based on the selected time frame
+        const timeframe = button.textContent.toLowerCase();
+        updateCards(timeframe, data);
+      });
+    });
+
+    // Function to update the cards based on the selected timeframe
+    function updateCards(timeframe, data) {
+      console.log("Updating cards for timeframe:", timeframe);
+
+      cards.forEach((card, index) => {
+        const currentTime = card.querySelector(".current-time");
+        const previousTime = card.querySelector(".previous-time");
+
+        if (!currentTime || !previousTime) {
+          console.error(
+            "Could not find .current-time or .previous-time in card:",
+            card
+          );
+          return;
+        }
+
+        const { current, previous } = data[index].timeframes[timeframe];
+        currentTime.textContent = `${current}hrs`;
+        previousTime.textContent = `Last ${
+          timeframe.charAt(0).toUpperCase() + timeframe.slice(1)
+        } - ${previous}hrs`;
+      });
+    }
+
+    // Initialize the first tab as active on page load
+    updateCards("daily", data);
+  })
+  .catch((error) => console.error("Error fetching data:", error));
+fetch("./data.json")
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error("Network response was not ok " + response.statusText);
+    }
+    return response.json();
+  })
+  .then((data) => {
+    console.log("Data fetched successfully:", data);
+
+    // Get the tab buttons and card elements
+    const tabButtons = document.querySelectorAll(".tablist-button");
+    const cards = document.querySelectorAll(".card");
+
+    // Add event listeners to each tab button
+    tabButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        // Remove the 'aria-selected' attribute from all buttons
+        tabButtons.forEach((btn) => btn.setAttribute("aria-selected", "false"));
+
+        // Add the 'aria-selected' attribute to the clicked button
+        button.setAttribute("aria-selected", "true");
+
+        // Update the cards based on the selected time frame
+        const timeframe = button.textContent.toLowerCase();
+        updateCards(timeframe, data);
+      });
+    });
+
+    // Function to update the cards based on the selected timeframe
+    function updateCards(timeframe, data) {
+      console.log("Updating cards for timeframe:", timeframe);
+
+      cards.forEach((card, index) => {
+        const currentTime = card.querySelector(".current-time");
+        const previousTime = card.querySelector(".previous-time");
+
+        if (!currentTime || !previousTime) {
+          console.error(
+            "Could not find .current-time or .previous-time in card:",
+            card
+          );
+          return;
+        }
+
+        const { current, previous } = data[index].timeframes[timeframe];
+        currentTime.textContent = `${current}hrs`;
+        previousTime.textContent = `Last ${
+          timeframe.charAt(0).toUpperCase() + timeframe.slice(1)
+        } - ${previous}hrs`;
+      });
+    }
+
+    // Initialize the first tab as active on page load
+    updateCards("daily", data);
+  })
+  .catch((error) => console.error("Error fetching data:", error));

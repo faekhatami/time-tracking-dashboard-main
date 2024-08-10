@@ -14,21 +14,23 @@
 <body>
   <main class="container">
     <section class="profile-card">
-      <img src="./images/image-jeremy.png" alt="Jeremy Robson profile picture">
-      <div class="profile-info">
-        <p>Report for</p>
-        <h2>Jeremy Robson</h2>
+      <div class="profile-header">
+        <img src="./images/image-jeremy.png" alt="Jeremy Robson profile picture" class="profile-image">
+        <div class="profile-info">
+          <p>Report for</p>
+          <h2>Jeremy Robson</h2>
+        </div>
       </div>
       <!-- Tablist Navigation -->
       <ul class="tablist" role="tablist">
         <li>
-          <button class="tablist__button" aria-selected="true" role="tab">Daily</button>
+          <button class="tablist-button" aria-selected="true" role="tab">Daily</button>
         </li>
         <li>
-          <button class="tablist__button" role="tab">Weekly</button>
+          <button class="tablist-button" role="tab">Weekly</button>
         </li>
         <li>
-          <button class="tablist__button" role="tab">Monthly</button>
+          <button class="tablist-button" role="tab">Monthly</button>
         </li>
       </ul>
     </section>
@@ -36,88 +38,83 @@
     <section class="cards">
       <!-- Card: Work -->
       <article class="card work">
-        <div class="card__content">
-          <button class="more-info__btn" aria-label="More info">
+        <div class="card-content">
+          <button class="more-info" aria-label="More info">
             <img src="./images/icon-ellipsis.svg" alt="ellipsis button">
           </button>
-          <h2 class="sr-only">Work</h2>
-          <div class="card__body">
-            <p class="current">32hrs</p>
-            <p class="previous__time-info">Last Week - 36hrs</p>
+          <h2 class="card-name">Work</h2>
+          <div class="card-body">
+            <p class="current-time">32hrs</p>
+            <p class="previous-time">Last Week - 36hrs</p>
           </div>
         </div>
       </article>
 
       <!-- Card: Play -->
       <article class="card play">
-        <div class="card__content">
-          <button class="more-info__btn" aria-label="More info">
+        <div class="card-content">
+          <button class="more-info" aria-label="More info">
             <img src="./images/icon-ellipsis.svg" alt="ellipsis button">
           </button>
-          <h2 class="sr-only">Play</h2>
-          <div class="card__body">
-            <p class="current">10hrs</p>
-            <p class="previous__time-info">Last Week - 8hrs</p>
+          <h2 class="card-name">Play</h2>
+          <div class="card-body">
+            <p class="current-time">10hrs</p>
+            <p class="previous-time">Last Week - 8hrs</p>
           </div>
         </div>
       </article>
 
       <!-- Card: Study -->
       <article class="card study">
-        <div class="card__content">
-          <button class="more-info__btn" aria-label="More info">
+        <div class="card-content">
+          <button class="more-info" aria-label="More info">
             <img src="./images/icon-ellipsis.svg" alt="ellipsis button">
-
           </button>
-          <h2 class="sr-only">Study</h2>
-          <div class="card__body">
-            <p class="current">4hrs</p>
-            <p class="previous__time-info">Last Week - 7hrs</p>
+          <h2 class="card-name">Study</h2>
+          <div class="card-body">
+            <p class="current-time">4hrs</p>
+            <p class="previous-time">Last Week - 7hrs</p>
           </div>
         </div>
       </article>
 
       <!-- Card: Exercise -->
       <article class="card exercise">
-        <div class="card__content">
-          <button class="more-info__btn" aria-label="More info">
+        <div class="card-content">
+          <button class="more-info" aria-label="More info">
             <img src="./images/icon-ellipsis.svg" alt="ellipsis button">
-
           </button>
-          <h2 class="sr-only">Exercise</h2>
-          <div class="card__body">
-            <p class="current">4hrs</p>
-            <p class="previous__time-info">Last Week - 5hrs</p>
+          <h2 class="card-name">Exercise</h2>
+          <div class="card-body">
+            <p class="current-time">4hrs</p>
+            <p class="previous-time">Last Week - 5hrs</p>
           </div>
         </div>
       </article>
 
       <!-- Card: Social -->
       <article class="card social">
-        <div class="card__content">
-          <button class="more-info__btn" aria-label="More info">
+        <div class="card-content">
+          <button class="more-info" aria-label="More info">
             <img src="./images/icon-ellipsis.svg" alt="ellipsis button">
-
           </button>
-          <h2 class="sr-only">Social</h2>
-          <div class="card__body">
-            <p class="current">5hrs</p>
-            <p class="previous__time-info">Last Week - 10hrs</p>
+          <h2 class="card-name">Social</h2>
+          <div class="card-body">
+            <p class="current-time">5hrs</p>
+            <p class="previous-time">Last Week - 10hrs</p>
           </div>
         </div>
       </article>
-
       <!-- Card: Self Care -->
       <article class="card selfcare">
-        <div class="card__content">
-          <button class="more-info__btn" aria-label="More info">
+        <div class="card-content">
+          <button class="more-info" aria-label="More info">
             <img src="./images/icon-ellipsis.svg" alt="ellipsis button">
-
           </button>
-          <h2 class="sr-only">Self Care</h2>
-          <div class="card__body">
-            <p class="current">2hrs</p>
-            <p class="previous__time-info">Last Week - 2hrs</p>
+          <h2 class="card-name">Self Care</h2>
+          <div class="card-body">
+            <p class="current-time">2hrs</p>
+            <p class="previous-time">Last Week - 2hrs</p>
           </div>
         </div>
       </article>

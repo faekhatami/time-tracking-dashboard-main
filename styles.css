@@ -9,9 +9,10 @@
 
 body {
     font-family: 'Rubik', sans-serif;
-    background-color: #1d204b;
+    background-color: hsl(226, 43%, 10%);
     color: #fff;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
@@ -20,99 +21,176 @@ body {
 
 /* Container */
 .container {
-    max-width: 1100px;
+    max-width: 360px;
     width: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 20px;
+}
+
+.profile-card {
+    background-color: hsl(235, 46%, 20%);
+    border-radius: 10px;
+    overflow: hidden;
+    width: 70%;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: hsl(246, 80%, 60%);
+    width: 100%;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.profile-image {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 2px solid white;
+    margin-right: 10px;
+}
+
+.profile-info p {
+    font-size: 12px;
+    font-weight: 300;
+    opacity: 0.8;
+}
+
+.profile-info h2 {
+    font-size: 16px;
+    font-weight: 300;
 }
 
 /* Tablist */
 .tablist {
     display: flex;
-    justify-content: flex-end;
+    align-items: center;
+    justify-content: center;
     gap: 10px;
+    list-style: none;
 }
 
-.tablist__button {
+.tablist-button {
     background: none;
     border: none;
     color: #6f76c8;
-    font-size: 16px;
+    font-size: 14px;
     cursor: pointer;
-    padding: 8px 16px;
+    padding: 10px;
     border-radius: 20px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: color 0.3s ease;
 }
 
-.tablist__button[aria-selected="true"] {
-    background-color: #6f76c8;
+.tablist-button[aria-selected="true"] {
     color: #fff;
 }
 
 /* Cards Grid */
 .cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    display: flex;
+    flex-direction: column;
     gap: 20px;
+    width: 70%;
 }
 
 /* Card Styles */
 .card {
-    border-radius: 15px;
+    border-radius: 10px;
     overflow: hidden;
     position: relative;
     color: #fff;
-    padding-top: 50px;
-    padding-bottom: 20px;
+    padding-top: 30px;
 }
 
-.card__content {
-    position: relative;
-    padding: 20px;
-}
-
-.card__body {
-    margin-top: 30px;
-}
-
-.current {
-    font-size: 3rem;
+.card-name {
+    font-size: 12px;
     font-weight: 300;
 }
 
-.previous__time-info {
-    font-size: 0.875rem;
+.card-content {
+    background-color: hsl(235, 46%, 20%);
+    position: relative;
+    border-radius: 10px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+    margin-top: 5px;
+}
+
+.current-time {
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.previous-time {
+    font-size: 10px;
     color: #a3a8cc;
 }
 
 /* Card Colors */
 .work {
     background-color: #ff8c66;
+    background-image: url(./images/icon-work.svg);
+    background-repeat: no-repeat;
+    background-position: top -10% right 5%;
+    background-size: 50px;
 }
 
 .play {
     background-color: #56c2e6;
+    background-image: url(./images/icon-play.svg);
+    background-repeat: no-repeat;
+    background-position: top -10% right 5%;
+    background-size: 50px;
 }
 
 .study {
     background-color: #ff5c7c;
+    background-image: url(./images/icon-study.svg);
+    background-repeat: no-repeat;
+    background-position: top -5% right 5%;
+    background-size: 50px;
 }
 
 .exercise {
     background-color: #4acf81;
+    background-image: url(./images/icon-exercise.svg);
+    background-repeat: no-repeat;
+    background-position: top right 5%;
+    background-size: 50px;
 }
 
 .social {
     background-color: #7536d3;
+    background-image: url(./images/icon-social.svg);
+    background-repeat: no-repeat;
+    background-position: top -10% right 5%;
+    background-size: 50px;
 }
 
 .selfcare {
     background-color: #f1c65b;
+    background-image: url(./images/icon-self-care.svg);
+    background-repeat: no-repeat;
+    background-position: top -10% right 5%;
+    background-size: 50px;
 }
 
 /* Button: More Info */
-.more-info__btn {
+.more-info {
     position: absolute;
     top: 20px;
     right: 20px;
@@ -122,21 +200,87 @@ body {
     padding: 0;
 }
 
-.more-info__btn svg {
-    fill: #bbc4d6;
-}
+
 
 /* Media Queries */
-@media (max-width: 768px) {
-    .tablist {
+@media (min-width: 376px) {
+
+    /* Adjust container width */
+    .container {
+        max-width: 660px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    /* Adjust profile-card width */
+    .profile-card {
+        width: 180px;
+        height: 340px;
+    }
+
+    .profile-header {
+        height: 220px;
+        display: flex;
+        flex-direction: column;
         justify-content: center;
+        align-items: start;
+        gap: 20px;
     }
 
-    .card__body {
-        margin-top: 20px;
+    .profile-info h2 {
+        font-size: 26px;
     }
 
-    .current {
-        font-size: 2.5rem;
+    .tablist {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: start;
+        gap: 5px;
+    }
+
+    .tablist-button {
+        font-size: 12px;
+        margin-left: 10px;
+    }
+
+    /* Adjust cards layout to grid */
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 20px;
+    }
+
+    .card {
+        width: 180px;
+        height: 160px;
+    }
+
+    /* Adjust card content padding */
+    .card-content {
+        padding: 30px;
+    }
+
+    /* Adjust card name font size */
+    .card-name {
+        font-size: 14px;
+    }
+
+    /* Adjust card body layout */
+    .card-body {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    /* Adjust current time font size */
+    .current-time {
+        font-size: 28px;
+    }
+
+    /* Adjust previous time font size */
+    .previous-time {
+        font-size: 12px;
     }
 }
